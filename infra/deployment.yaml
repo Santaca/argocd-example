@@ -15,5 +15,13 @@ spec:
       containers:
         - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
           name: guestbook-ui
+          livenessProbe:
+            successThreshold: 1
+            failureThreshold: 3
+            initialDelaySeconds: 20
+            periodSeconds: 30
+            timeoutSeconds: 10
+            httpGet:
+              path: "/unknown"
           ports:
             - containerPort: 80
