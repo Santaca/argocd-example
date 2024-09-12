@@ -22,7 +22,7 @@ spec:
             periodSeconds: 30
             timeoutSeconds: 10
             httpGet:
-              path: "/unknown"
+              path: "/"
               port: 443
           ports:
             - containerPort: 80
